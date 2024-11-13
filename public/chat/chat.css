@@ -1,0 +1,358 @@
+/* Medidas:
+    % = funciona como porcentagem total da tela
+    vh (viewport height) = funciona como a porcentagem da altura total da tela, o "h" vem de height
+    vw (viewport width) = funciona como a porcentagem de largura total da tela, o "w" vem de width 
+    rem (root em) = é a porcentagem do tamanho que a imagem tem no arquivo html, 1rem = 100% do tamanho 
+*/
+
+/* Fontes */
+@font-face {
+    font-family: 'Glacial';
+    src: url('../imagens/fontes/GlacialIndifference.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LoveloBlack';
+    src: url('../imagens/fontes/Lovelo_Black.ttf') format('truetype');
+} 
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding-top: 10vh;
+}
+
+/* Faixa superior */
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background: #000000;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    top: 0;
+    letter-spacing: 0.4cap;
+    font-family: 'LoveloBlack', sans-serif;
+    overflow: hidden;
+}
+
+.logo {
+    height: 4vw; 
+    width: 4vw;
+    top: 1.5vh;
+    left: 0.5vw;
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+    object-fit: contain;
+}
+.logo:hover {
+    transform: scale(1.15);
+}
+
+h1 {
+    font-family: 'LoveloBlack', sans-serif;
+    position: absolute;
+    letter-spacing: 1.2cap;
+    font-size: clamp(1.5vw, 4vh, 5vw);
+    max-width: 95%;
+    margin-top: 4vh;
+}
+
+/* Container principal */
+.app-container {
+    display: flex;
+    height: 88vh;
+}
+
+/* Barra de ícones lateral */
+.sidebar-icons {
+    border-top: 0.3vh solid #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    align-items: center;
+    background-color: #000000;
+}
+.sidebar-icons img {
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+    margin-bottom: 5vh;
+    transition: transform 0.3s ease;
+}
+.sidebar-icons img:hover {
+    transform: scale(1.1);
+}
+#settings-icon { 
+    position: fixed;
+    bottom: 0;
+}
+
+/* Barra lateral de chats */
+.sidebar {
+    border: 0.3vh solid #1c1c1c;
+    width: 20vw;
+    background-color: #000000;
+    padding: 0.2vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+}
+
+/* Tipos de chats */
+.contact {
+    align-items: center;
+    background-color: #000000;
+    border-bottom: 0.3vh solid #1c1c1c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin: 0.5vh;
+    padding: 2vh;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: clamp(1vw, 1.5vw, 2vw);
+}
+.contact:hover {
+    background-color: #3c3c3c;
+}
+.contact-avatar {
+    width: 4vw;
+    height: 4vw;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1vw;
+}
+
+/* Container do chat */
+.chat-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url("../imagens/fundo/Preto.png");
+    background-size: 80vw;
+    border: 0.3vh solid #1c1c1c;
+}
+#chat-header {
+    background-color: #000000;
+    border-bottom: 0.3vh solid #1c1c1c;
+    padding: 0.6vh 3vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 1.2cap;
+    font-size: clamp(1vw, 1.5vh, 3vw);
+}
+#profile-image {
+    width: 5vw;
+    height: 5vw;
+}
+.options img {
+    width: 2.5vw;
+    height: 2.5vw;
+}
+#chat-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Três pontos */
+.option .dots {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-left: auto;
+}
+.options .dropdown {
+    display: none;
+    position: absolute;
+    width: 8vw;
+    top: 18vh;
+    z-index: 1;
+    right: 4vw;
+    background-color: #1c1c1c;
+    padding: 8px;
+    border-radius: 2px;
+}
+.options:hover .dropdown {
+    display: block;
+}
+
+button {
+    padding: 5px;
+    margin-bottom: 1vh;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    background-color: #9411cf;
+    transform: scale(1.05);
+}
+
+.message-input {
+    background-color: #000000;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+#message-text {
+    height: 5vh;
+    width: 55vw;
+    border: 0.5vh solid #9411cf;
+    padding-left: 2vw;
+    border-radius: 6vh;
+    background-color: #000000;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.message-input img {
+    margin: 1vw 1vw;
+    transition: transform 0.3s ease;
+}
+.message-input img:hover {
+    transform: scale(1.2);
+}
+.message-input button {
+    padding: 1vh 1.5vw;
+    margin: 1vh 0 0.5vh 1vw;
+}
+
+/* Conteúdo do chat */
+#chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh; 
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Mensagens gerais */
+.message {
+    margin: 0.5vh;
+    padding: 1vh 1vw;
+    max-width: 40%;
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: clamp(1vw, 1.3vw, 1.5vw);
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Mensagens recebidas de outros usuários */
+.message.received {
+    align-self: flex-start;
+    background-color: #9411cf; /* Roxo para mensagens recebidas */
+    color: #ffffff;
+    margin-left: 1vw;
+}
+.message.received::before {
+    content: "";
+    position: absolute;
+    left: -0.8vw;
+    top: 0.2vh;
+    border-width: 1.5vw 0vh 1vh 1.5vw;
+    border-style: solid;
+    border-color: transparent transparent transparent #9411cf;
+}
+
+/* Mensagens enviadas pelo próprio usuário */
+.message.user {
+    align-self: flex-end;
+    background-color: #59595b; /* Cinza para mensagens enviadas pelo usuário */
+    color: #ffffff;
+    margin-right: 1vw;
+}
+.message.user::after {
+    content: "";
+    position: absolute;
+    right: -0.8vw;
+    top: 0.2vh;
+    border-width: 1.5vw 1.5vw 1vw 0;
+    border-style: solid;
+    border-color: transparent #59595b transparent transparent;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Abas adicionais */
+#overlay-role, #add-group-modal {
+    width: clamp(25vw, 30vw, 35vw);
+    height: clamp(30vh, 35vh, 40vh);
+    position: fixed;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 0.5vh solid #333;
+    padding: 1.5vh;
+    border-radius: 1vh;
+    z-index: 1000;
+    animation: slide-up 0.5s ease forwards;
+    font-size: clamp(0.5vw, 1.5vw, 2vw);
+    overflow: hidden;
+}
+h3 {
+    margin: 1.5vh;
+}
+#add-group-modal {
+    top: 49vh;
+    left: 21vw;
+}
+#overlay-role {
+    top: 30vh;
+    right: -10vw;
+}
+.X {
+    display: flex;
+    font-size: clamp(1vw, 1.5vw, 2vw);
+}
+
+@keyframes slide-up {
+    from {
+        transform: translate(-50%, 100%);
+    }
+    to {
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Inputs e botões arredondados */
+.rounded-input {
+    font-size: clamp(0.5vw, 1vw, 1.5vw);
+    border-radius: 1vh;
+    padding: 0.5vh;
+    width: 40%;
+    margin: 5px 0;
+}
+#image-preview {
+    position: fixed; 
+    display: none; 
+    border-radius: 50%; 
+    width: 8vw; 
+    height: 8vw;
+    margin-top: 1.5vh;
+}
+.rounded-button {
+    font-size: clamp(0.5vw, 1vw, 1.5vw);
+    border-radius: 5vh;
+    padding: 1vw 2vh;
+    background-color: #250036;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 9vh;
+    margin-left: 23vw;
+}
+.rounded-button:hover {
+    background-color: #9411cf;
+}

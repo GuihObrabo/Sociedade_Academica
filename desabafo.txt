@@ -1,0 +1,18 @@
+"fudeu foi tudo aqui" - Kauan
+
+
+notas importantes:
+// espero que usem este bloco para anotar partes importantes do código ou desabafar, é anônimo
+// lembre-se de sempre fazer notas sobre o que você atualizou no código
+
+    Diretórios:
+    lembre-se do diretório das pastas ser sempre /TCC/public/
+    caso esteja tendo problemas com diretórios sem usar o xampp, apenas tire o /TCC do começo, ou coloque ele
+    com o xampp, basta tirar o comando de comentário do <base> 
+
+    Medidas CSS:
+    % = funciona como porcentagem total da tela
+    vh (viewport height) = funciona como a porcentagem da altura total da tela, o "h" vem de height
+    vw (viewport width) = funciona como a porcentagem de largura total da tela, o "w" vem de width 
+    rem (root em) = é a porcentagem do tamanho que a imagem tem no arquivo html, 1rem = 100% do tamanho 
+

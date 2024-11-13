@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro S.A</title>
+    <link rel="stylesheet" href="styles.css">
+   <!-- <base href="http://localhost/TCC"> --> <!-- Caso esteja usando xampp, apenas tire o comando de comentário -->
+</head>
+<body>
+    <div class="fala">Bem vindo a nossa rede de comunicação interativa entre a escola e você!</div> 
+</body>
+<header>
+    <a href="../layout/layout.html">
+     <img class="LOGOPORRA" src="../imagens/Logos/logo_branca.png" height="75vh" width="75vw"></img> 
+    </a>
+    <h1>UNINDO MENTES, COMPARTILHANDO CONHECIMENTO</h1>
+</header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>CADASTRE-SE</h2>
+            <p>Faça parte da nossa comunidade</p>
+            <form id="registerForm" action="../cadastro/cadastro.php" method="post">
+                <br> 
+                <input type="username" name="username" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <div style="display: flex; align-items: center;">
+                    <input type="password" name="senha" placeholder="Senha" required id="password">
+                    <label for="showPassword">
+                        <input type="checkbox" id="showPassword" >
+                    </label>
+                </div>
+                <select name="tipo_conta">
+                    <br> <br>
+                    <option value="">Tipo de conta</option>
+                    <option value="Aluno">Aluno</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Servidor">Servidor</option>
+                </select>
+                <input class="botao" type="submit" id="btnEntrar" value="Entrar"></input>
+            </form>
+            <div class="entrar">
+            <p2>Já tem uma conta?</p2> 
+            <a href="../entrar/entrar.html">Entre por aqui</a>
+            </div>
+            <p id="successMessage" style="display: none; color: green; text-align: center;">Cadastro efetivado com sucesso!</p>
+        </div>
+    </div>
+    <script 
+       
+    ></script>
+
+</body>
+</html>

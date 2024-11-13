@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat S.A</title>
+    <link rel="stylesheet" href="../chat/chat.css">
+     <!-- Adicionando o favicon -->
+     <link rel="icon" href="/public/imagens/FAV._icon.png" type="image/x-icon"> <!-- Caminho para o favicon -->
+     <link rel="apple-touch-icon" sizes="180x180" href="../imagens/apple-touch-icon.png"> <!-- Ícone para dispositivos Apple -->
+     
+    <!-- <base href="http://localhost/TCC"> --> <!-- Caso esteja usando xampp, apenas tire o comando de comentário -->
+</head>
+
+<header>
+    <a href="../layout/layout.html">
+     <img class="logo" src="../imagens/Logos/logo_roxa.png" height="60px" width="60px">
+    </a>
+    <h1>Sociedade Acadêmica</h1>
+</header>
+
+<body>
+    <div class="app-container">
+        <!-- Barra lateral com ícones -->
+        <div class="sidebar-icons">
+            <img src="../imagens/source/casa.png" alt="Home" id="home-icon" onclick="goToHomePage()" width="40vw" height="40ch">
+            <img src="../imagens/source/sino.png" alt="Notificações" id="notifications-icon" width="40vw" height="40ch">
+            <img src="../imagens/source/perfil.png" alt="Contatos" id="contacts-icon" width="40vw" height="40ch">
+            <img src="../imagens/source/mais.png" alt="Adicionar" id="add-icon" onclick="openAddGroupModal()" width="40vw" height="40ch">
+            <img src="../imagens/source/engrenagem.png" alt="Configurações" id="settings-icon" width="40vw" height="40vh">
+        </div>
+
+        <div class="sidebar">
+            <div class="contact-list" id="contact-list">
+                <div class="contact" onclick="openChat('CHAT GERAL')">
+                    <img src="../imagens/icons/Etec_geral.png" alt="Avatar" class="contact-avatar" width="50px" height="50px">
+                    CHAT GERAL
+                </div>
+                <!-- Mais grupos aparecerão aqui -->
+            </div>
+        </div>
+        <div class="chat-container">
+            <div id="chat-header">
+                <img id="profile-image" src="../imagens/Logos/logo_branca.png" alt="Imagem do Contato" height="50px" width="50px"/>
+                <h2 id="chat-name">Selecione um contato</h2>
+                <div class="options">
+                    <img src="../imagens/source/3_pontos.png" class="dots" height="50px" width="50px"></img> 
+                    <div class="dropdown hidden">
+                        <button onclick="shareLink('CHAT GERAL')">Compartilhar Link</button>
+                        <button onclick="showRoleOptions('CHAT GERAL')">Adicionar Funções</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="chat-content">
+                <!-- Aqui irão as mensagens do chat -->
+                 
+            </div>
+        
+            <div class="message-input">
+                <img src="../imagens/source/clip.png" alt="Enviar Arquivo" id="clip-icon" onclick="requestFilePermission()" width="40px" height="40px">
+                <input type="text" id="message-text" placeholder="Digite uma mensagem...">
+                <button onclick="sendMessage()">Enviar</button>
+                <img src="../imagens/source/microfone.png" alt="Gravar Áudio" id="mic-icon" onclick="startRecording()" width="40px" height="40px">
+                <img src="../imagens/source/microfone.png" alt="Parar Gravação" id="stop-icon" style="display: none;" onclick="stopRecording()" width="40px" height="40px">
+            </div>
+            
+        </div>  
+    </div>
+    <!-- Modal para adicionar grupo -->
+    <div id="add-group-modal" class="overlay hidden">
+        <div class="overlay-content">
+            <button onclick="closeAddGroupModal()" class="X">X</button>
+            <h3>Adicionar Novo Grupo</h3>
+            <input type="text" id="group-name" placeholder="Nome do grupo" class="rounded-input">
+            <input type="number" id="group-members" placeholder="Quantidade de participantes" min="1" class="rounded-input">
+            <input type="file" id="group-image" accept="image/*" onchange="previewImage(event)">
+            <img id="image-preview" src="" alt="Pré-visualização da imagem" >
+            <button onclick="addGroup()" class="rounded-button">Adicionar</button>
+        </div>
+    </div>
+
+    <!-- Modal para adicionar função -->
+    <div id="overlay-role" class="overlay hidden">
+        <div class="overlay-content">
+            <button onclick="closeOverlay()" class="X">X</button>
+            <h3>Selecione o cargo:</h3>
+            <select id="role-selection" class="rounded-input">
+                <option value="Representante">Representante</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Supervisor">Supervisor</option>
+            </select>
+            <input type="text" id="user-id" placeholder="Digite o ID do aluno, servidor ou professor" class="rounded-input">
+            <button onclick="addRole()" class="rounded-button">Finalizar</button>
+        </div>
+    </div>
+
+    <script src="../chat/chat.js"></script>
+</body>
+</html>

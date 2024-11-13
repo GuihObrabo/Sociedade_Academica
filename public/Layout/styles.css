@@ -1,0 +1,172 @@
+/* Fontes e Cores */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #000000;
+    color: #fff;
+    background-image: url('../imagens/fundo/preto.png');
+    background-size: cover;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Glacial';
+    src: url('../imagens/fontes/GlacialIndifference.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LoveloBlack';
+    src: url('../imagens/fontes/Lovelo_Black.ttf') format('truetype');
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #000000, #9411cf);
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 12vh;
+    top: 0;
+    left: 0;
+    letter-spacing: 0.4cap;
+    padding: 0 2vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-family: 'LoveloBlack', sans-serif;
+    letter-spacing: 1.2cap;
+    font-size: clamp(2vw, 4vh, 4vw);
+    margin: 0;
+}
+
+nav {
+    font-family: 'Times New Roman', Times, sans-serif;
+    display: flex;
+    gap: 2vw;
+    font-size: clamp(1.2vw, 1.8vh, 2.2vw);
+}
+
+nav a {
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #db87ff;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #9400d3;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.LOGOPORRA {
+    height: 6vw;
+    width: 6vw;
+    transition: transform 0.3s ease-in-out;
+    object-fit: contain;
+}
+
+.LOGOPORRA:hover {
+    transform: scale(1.1);
+}
+
+.cadastro {
+    display: flex;
+    gap: 1vw;
+}
+
+.cadastro1, .cadastro2, .user-email {
+    display: inline-block;
+    padding: 0.5vw 1vw;
+    border-radius: 10px;
+    font-size: clamp(1.2vw, 1.8vh, 2.2vw);
+    background-color: #9411cf;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cadastro1:hover, .cadastro2:hover, .user-email:hover {
+    background-color: #db87ff;
+}
+
+.user-email {
+    font-weight: bold;
+}
+
+/* Seção Principal */
+section {
+    border: 1px solid #333;
+    padding: 3vh 3vw;
+    width: 70%;
+    margin: 15vh auto 8vh;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+    font-size: clamp(2.5vw, 4vh, 5vw);
+    color: #ffffff;
+    margin-bottom: 2vh;
+    border-bottom: 2px solid #9411cf;
+    padding-bottom: 0.5vh;
+}
+
+section p, section ul {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 2vh;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 2vw;
+}
+
+/* Rodapé */
+footer {
+    background: linear-gradient(to right, #000000, #9411cf);
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1.5vh 0;
+    font-size: clamp(1vw, 1.5vh, 2vw);
+    border-top: 1px solid #333;
+}
